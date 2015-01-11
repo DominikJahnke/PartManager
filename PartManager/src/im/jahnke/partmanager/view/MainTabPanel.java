@@ -1,4 +1,4 @@
-package view;
+package im.jahnke.partmanager.view;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

@@ -1,4 +1,4 @@
-package model;
+package im.jahnke.partmanager.model;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

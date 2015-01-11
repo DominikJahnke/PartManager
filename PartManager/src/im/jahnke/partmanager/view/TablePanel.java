@@ -1,4 +1,7 @@
-package view;
+package im.jahnke.partmanager.view;
+
+import im.jahnke.partmanager.model.DataManager;
+import im.jahnke.partmanager.view.partsTabbedPanel.TabPanel;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,9 +21,6 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
-
-import view.partsTabbedPanel.TabPanel;
-import model.DataManager;
 
 @SuppressWarnings("serial")
 public class TablePanel extends JPanel {

@@ -1,4 +1,6 @@
-package view;
+package im.jahnke.partmanager.view;
+
+import im.jahnke.partmanager.model.DataManager;
 
 import java.awt.Component;
 import java.awt.event.KeyAdapter;
@@ -6,8 +8,6 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
-
-import model.DataManager;
 
 @SuppressWarnings({ "serial" })
 public class TreeComboBox extends JComboBox<Object> {

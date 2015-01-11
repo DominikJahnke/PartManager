@@ -1,9 +1,9 @@
 package im.jahnke.partmanager.start;
 
-import com.alee.laf.WebLookAndFeel;
+import im.jahnke.partmanager.view.FrameView;
+import im.jahnke.partmanager.view.OrderDialog;
 
-import view.OrderDialog;
-import view.FrameView;
+import com.alee.laf.WebLookAndFeel;
 
 /**
  * PartManager is a program to manage electronic parts

@@ -1,4 +1,6 @@
-package view;
+package im.jahnke.partmanager.view;
+
+import im.jahnke.partmanager.model.DataManager;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +15,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
-import model.DataManager;
 
 @SuppressWarnings("serial")
 public class AddDatasheet extends JDialog {

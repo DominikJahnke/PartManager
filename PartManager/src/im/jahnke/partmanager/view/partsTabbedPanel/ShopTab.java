@@ -1,4 +1,6 @@
-package view.partsTabbedPanel;
+package im.jahnke.partmanager.view.partsTabbedPanel;
+
+import im.jahnke.partmanager.model.DataManager;
 
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -29,8 +31,6 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
-import model.DataManager;
 
 @SuppressWarnings("serial")
 public class ShopTab extends JPanel {

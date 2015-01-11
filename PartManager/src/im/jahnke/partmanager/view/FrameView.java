@@ -1,4 +1,4 @@
-package view;
+package im.jahnke.partmanager.view;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;

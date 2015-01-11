@@ -1,10 +1,15 @@
-package view.partsTabbedPanel;
+package im.jahnke.partmanager.view.partsTabbedPanel;
+
+import im.jahnke.partmanager.model.DataManager;
+import im.jahnke.partmanager.view.AddDatasheet;
+import im.jahnke.partmanager.view.TreeComboBox;
 
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -13,11 +18,6 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JTextPane;
-
-import view.AddDatasheet;
-import view.TreeComboBox;
-import model.DataManager;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 

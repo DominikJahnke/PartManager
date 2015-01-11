@@ -1,4 +1,4 @@
-package view.partsTabbedPanel;
+package im.jahnke.partmanager.view.partsTabbedPanel;
 
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;

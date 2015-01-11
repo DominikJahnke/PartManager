@@ -1,4 +1,6 @@
-package view;
+package im.jahnke.partmanager.view;
+
+import im.jahnke.partmanager.model.DataManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,8 +32,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
-
-import model.DataManager;
 
 @SuppressWarnings("serial")
 public class AddItem extends JDialog {

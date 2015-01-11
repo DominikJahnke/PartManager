@@ -1,4 +1,6 @@
-package view;
+package im.jahnke.partmanager.view;
+
+import im.jahnke.partmanager.model.DataManager;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,8 +25,6 @@ import javax.swing.JTextField;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-
-import model.DataManager;
 
 @SuppressWarnings("serial")
 public class StoragePanel extends JPanel {

@@ -1,4 +1,4 @@
-package model;
+package im.jahnke.partmanager.model;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -27,7 +27,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM parts;");
 
@@ -92,7 +92,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM parts WHERE category="
@@ -132,7 +132,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT shop_positions.part_id, parts.id,"
@@ -175,7 +175,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM parts WHERE id="
 		    + Integer.toString(itemID) + " LIMIT 1;");
@@ -216,7 +216,7 @@ public class DataManager {
 	PreparedStatement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    String sql = "INSERT INTO parts(id,title,description,category,image,pieces) VALUES (?, ?, ?, ?, ?, ?);";
 	    stmt = c.prepareStatement(sql);
 	    stmt.setInt(1, id);
@@ -248,7 +248,7 @@ public class DataManager {
 	    c.close();
 	    int shop_id = getNextNewShopID();
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    sql = "INSERT INTO shop_positions(id,part_id,shop,order_id,price) VALUES (?, ?, ?, ?, ?);";
 	    stmt = c.prepareStatement(sql);
 	    stmt.setInt(1, shop_id);
@@ -277,7 +277,7 @@ public class DataManager {
 	int id = 0;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT MAX(id) AS new_id FROM parts;");
@@ -302,7 +302,7 @@ public class DataManager {
 	int id = 0;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT MAX(id) AS new_id FROM shop_positions;");
@@ -327,7 +327,7 @@ public class DataManager {
 	int id = 0;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT MAX(id) AS new_id FROM boxes;");
@@ -351,7 +351,7 @@ public class DataManager {
 	Statement stmt2 = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c2 = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c2 = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt2 = c2.createStatement();
 	    String query = "DELETE FROM parts WHERE id=" + id + "";
 	    System.out.println(query);
@@ -369,7 +369,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    String query = "DELETE FROM shop_positions WHERE part_id=" + id
 		    + ";";
@@ -402,7 +402,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM shop_positions WHERE part_id="
@@ -442,7 +442,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT COUNT(*) AS counting FROM shop_positions WHERE shop=\""
@@ -472,7 +472,7 @@ public class DataManager {
 	PreparedStatement stmt2 = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c2 = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c2 = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    String sql = "INSERT INTO shop_positions(id,part_id,shop,order_id,price) VALUES (?, ?, ?, ?, ?);";
 	    stmt2 = c2.prepareStatement(sql);
 	    stmt2.setInt(1, getNextNewShopID());
@@ -499,7 +499,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    String query = "DELETE FROM shop_positions WHERE shop=\"" + shop
 		    + "\" AND order_id=\"" + order_id + "\" AND price=\""
@@ -522,7 +522,7 @@ public class DataManager {
 	try {
 	    Class.forName("org.sqlite.JDBC");
 	    Connection c = DriverManager
-		    .getConnection("jdbc:sqlite:database.db");
+		    .getConnection("jdbc:sqlite:db/database.db");
 	    Statement stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM categories;");
 
@@ -553,7 +553,7 @@ public class DataManager {
 	try {
 	    Class.forName("org.sqlite.JDBC");
 	    Connection c = DriverManager
-		    .getConnection("jdbc:sqlite:database.db");
+		    .getConnection("jdbc:sqlite:db/database.db");
 	    c.setAutoCommit(false);
 
 	    String query = "UPDATE parts SET title=?, description=?, category=?, pieces=? WHERE id=?";
@@ -590,7 +590,7 @@ public class DataManager {
 	try {
 	    Class.forName("org.sqlite.JDBC");
 	    Connection c = DriverManager
-		    .getConnection("jdbc:sqlite:database.db");
+		    .getConnection("jdbc:sqlite:db/database.db");
 	    c.setAutoCommit(false);
 
 	    String query = "UPDATE shop_positions SET shop=\""
@@ -623,7 +623,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM boxes;");
 
@@ -662,7 +662,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM orders;");
 	    Date date;
@@ -710,7 +710,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT  id, title, order_positions.pieces, "
@@ -752,7 +752,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM orders WHERE id="
 		    + order_id + ";");
@@ -785,7 +785,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT COUNT(*) AS count FROM shop_positions WHERE order_id='"
@@ -822,7 +822,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT COUNT(*) as count FROM box_positions WHERE part_id="
@@ -850,7 +850,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM box_positions WHERE part_id="
@@ -877,7 +877,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt.executeQuery("SELECT * FROM boxes WHERE id="
 		    + id + " LIMIT 1;");
@@ -907,7 +907,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM boxes WHERE name=\"" + name
@@ -939,7 +939,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM box_positions WHERE box_id="
@@ -975,7 +975,7 @@ public class DataManager {
 	Statement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT * FROM box_positions WHERE box_id="
@@ -1014,7 +1014,7 @@ public class DataManager {
 	PreparedStatement stmt2 = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c2 = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c2 = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    String sql = "INSERT INTO datasheets(part_id, filename) VALUES (?, ?);";
 	    stmt2 = c2.prepareStatement(sql);
 	    stmt2.setInt(1, part_id);
@@ -1052,7 +1052,7 @@ public class DataManager {
 	int count = 0;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    stmt = c.createStatement();
 	    ResultSet rs = stmt
 		    .executeQuery("SELECT COUNT() as count FROM datasheets WHERE part_id="
@@ -1083,7 +1083,7 @@ public class DataManager {
 	PreparedStatement stmt = null;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:database.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:db/database.db");
 	    String sql = "INSERT INTO boxes(id,name,boxes,columns,rows) VALUES (?, ?, ?, ?, ?);";
 	    stmt = c.prepareStatement(sql);
 	    stmt.setInt(1, getNextNewBoxID());
