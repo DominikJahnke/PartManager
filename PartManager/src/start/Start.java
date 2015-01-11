@@ -10,8 +10,6 @@ import view.FrameView;
  * 
  * TODO List:
  * 
- * - Add Amazon.de to shops (ok)
- * - Suche mit Artikelnummer erweitern (ok)
  * - Preise aktualisieren
  * 
  * 
